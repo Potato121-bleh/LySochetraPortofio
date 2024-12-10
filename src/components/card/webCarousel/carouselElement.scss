@@ -1,0 +1,131 @@
+@import "./../../style/package/button";
+
+.web-carousel-main-con {
+    list-style: none;
+    padding: 0;
+    height: 83%;
+    width: 110vw;
+    margin: 0;
+    display: flex;
+    align-items: flex-end;
+    transform: translateX(100vw);
+}
+
+.rickshaw-img {
+    width: 300px;
+    height: 200px;
+    margin-bottom: -7px
+}
+
+.web-carousel-rickshaw-con {
+    position: relative;
+}
+
+.rickshaw-wheel-con {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 99.5%;
+    bottom: -7px;
+}
+
+.rickshaw-back-wheel {
+    margin-right: 13px;
+}
+
+.web-carousel-attactment-con {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    transform: translateX(-5px);
+}
+
+.web-carousel-attactment-element {
+    width: 315px;
+    position: relative;
+}
+
+.carrier-wheel-con {
+    position: absolute;
+    bottom: -6px;
+    width: 75.5%;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 53px;
+    img {
+        width: 75px;
+        height: 75px;
+    }
+}
+
+.web-carousel-attactment-cart-img {
+    width: 315px;
+    height: 80px;
+}
+
+.web-carousel-attactment-text-con {
+    border: solid 5px #000000;
+    margin-left: 35px;
+    margin-right: 3px;
+    height: 200px;
+}
+
+.web-carousel-attactment-profile-con {
+    display: flex;
+    margin: 10px;
+    h3 {
+        margin-left: 20px;
+    }
+}
+
+.web-carousel-attactment-icon {
+    width: 45px;
+}
+
+.web-carousel-attactment-profile-description {
+    width: 247px;
+    margin: 10px;
+    height: 70px;
+    font-size: 14px;
+}
+
+.web-carousel-attactment-profile-btn {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 20px;
+}
+
+//animation
+
+.spin-wheel {
+    animation: spining-wheel linear 1.5s infinite forwards;
+}
+
+.shake-element {
+    animation: shake-element-animation linear 0.2s infinite forwards;
+}
+
+.drive-off-screen {
+    animation: going-off-screen linear 50s infinite forwards;
+}
+
+@keyframes spining-wheel {
+    to{transform: rotateZ(-360deg);}
+}
+
+@keyframes shake-element-animation {
+    50%{transform: translateY(1px);}
+}
+
+@keyframes going-off-screen {
+    to{transform: translateX(-110vw);}
+}
+
+
+//for theme
+
+.web-carousel-yellow-btn {
+    margin-left: 10px;
+    @include package-button-standard($yellowOrPurple: "yellow", $size: "small");
+}
+

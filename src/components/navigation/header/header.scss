@@ -1,0 +1,54 @@
+@import "./../../style/variable", "./../../style/package/button";
+
+
+.main-header-con { 
+    height: 65px;
+    background-color: #F9F5F2;
+    border-bottom: solid #d7d7d7;
+}
+
+.sub-con {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.user-profile {
+    text-align: center;
+    width: 10%;
+    h2 {
+        margin: 0;
+    }
+}
+
+.nav-bar {
+    list-style: none;
+    width: 50%;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    li {
+        transition: all 300ms ease-in-out;
+        margin: 10px;
+        padding: 10px;
+        border-radius: 10px;
+        &:hover {
+            background-color: $textHoverColor;
+            cursor: pointer;
+        }
+    }
+}
+
+.login-con {
+    text-align: center;
+    list-style: none;
+    width: 10%;
+}
+
+
+.yellow-btn-standard {
+    @include package-button-standard($yellowOrPurple: "yellow")
+}

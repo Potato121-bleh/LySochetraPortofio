@@ -1,0 +1,67 @@
+@import "./../../style/package/button",
+        "./../../style//package/switch";
+
+.setting-content-one-main-con {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.setting-content-one-element-form {
+    width: 300px;
+    height: 275px;
+    padding: 20px;
+    background: #e9e9e9;
+    border-radius: 12px;
+    box-shadow: 8px 8px 16px rgb(0 0 0 / 26%), -8px -8px 16px rgba(255, 255, 255, 0.7);
+}
+
+.setting-content-element-title {
+    font-size: 17px;
+    margin: 3px;
+    margin-top: 15px;
+    margin-left: 0;
+}
+
+.setting-content-inputbox-con {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3px;
+}
+
+
+.setting-first-option {
+    margin-top: 0;
+}
+
+.setting-test-switch {
+    @include package-switch-classic-red();
+}
+
+.setting-test-switch-ball {
+    @include package-switch-classic-red($type: "ball")
+}
+
+
+//Add on
+
+.move-turn-on-switch {
+    background: #67e91e3b;
+}
+.move-turn-on-switch-ball {
+    background-color: #5ac21f;;
+    transform: translateX(20px);
+}
+
+/* Add on by style package */
+.setting-fixed-purple-btn-standard {
+  @include package-button-standard($yellowOrPurple: "purple", $size: "small");
+  font-size: 10px;
+  box-shadow: none;
+  border: solid 1px;
+  background-color: white;
+}
