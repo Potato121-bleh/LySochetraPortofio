@@ -100,7 +100,6 @@ export const verifyToken = async (): Promise<userInfo> => {
         if (fetchUserResp.status != 200 && !fetchUserResp.data.settingId) {
             throw new Error('failed to validate the user')
         }
-        console.log(fetchUserResp.data)
         /*
         fetchSettingResp = await axios.post(basedApiUrl + "/setting/getbyid", {
             settingId: fetchUserResp.data.settingId
@@ -109,7 +108,6 @@ export const verifyToken = async (): Promise<userInfo> => {
     } catch (error) {
         throw new Error('failed to fetch the data')
     }
-    console.log(fetchUserResp.data)
     return fetchUserResp.data
 }
 

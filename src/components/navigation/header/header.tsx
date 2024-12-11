@@ -2,10 +2,11 @@
 import Link from 'next/link'
 import './header.css'
 import { redirect, useSearchParams } from 'next/navigation'
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { fetchedInfo, getSetting, verifyToken } from '@/components/method/utils'
 import { temporaryUserData } from '@/components/method/utils'
 import { QueryClient, useMutation, useQuery } from '@tanstack/react-query'
+import { DataContext } from '@/components/provider/provider'
 
 type headerInfo = {
     userInfo: fetchedInfo
@@ -17,13 +18,15 @@ type userinfo = {
 
 let tracker = true
 
-function HeaderPage({ username }: userinfo) {
+function HeaderPage() {
+    let contextConsumer = useContext(DataContext)
+
     useEffect(() => {
         let headerTxt = document.getElementById('user-nickname-id')
-        if (headerTxt) {
-            headerTxt.innerText = username
+        if (headerTxt && contextConsumer.usernickname) {
+            headerTxt.innerText = contextConsumer.usernickname
         }
-    }, [username])
+    })
 
     const handleNavigate = () => {
         window.location.href = '/auth/log-in'

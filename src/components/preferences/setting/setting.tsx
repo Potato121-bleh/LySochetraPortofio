@@ -1,7 +1,10 @@
 'use client'
 
 import './setting.css'
-import { temporarySwitchData } from '@/app/data/temporary'
+
+//we can do callback to the page.tsx component after each click on here
+
+let temporarySwitchData = [false, false]
 
 function Setting() {
     const handleClickSwitch = (
@@ -76,6 +79,9 @@ function Setting() {
                     <button className="setting-fixed-purple-btn-standard">
                         Show Options
                     </button>
+                </div>
+                <div>
+                    <button>Submit</button>
                 </div>
             </li>
         </ul>
