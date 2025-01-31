@@ -79,7 +79,8 @@
 }
 
 .web-carousel-attactment-icon {
-    width: 45px;
+    width: 45px !important;
+    height: 45px !important;
 }
 
 .web-carousel-attactment-profile-description {
@@ -124,8 +125,17 @@
 
 //for theme
 
-.web-carousel-yellow-btn {
+.web-carousel-white-btn {
     margin-left: 10px;
-    @include package-button-standard($yellowOrPurple: "yellow", $size: "small");
+    @include package-button-standard($yellowOrwhite: "white", $size: "small");
 }
+
+// Responsive section 
+
+// @media (max-width: 1000px) {
+//     .web-carousel-attactment-icon {
+//         width: 30px !important;
+//         height: 30px !important;
+//     }
+// }
 

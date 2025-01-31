@@ -119,10 +119,3 @@
     100%{transform: translate(0px, 0px);}
 }
 
-
-
-// COMPONENT style
-
-.yellow-standard-btn {
-    @include package-button-standard($size: "small", $yellowOrPurple:"yellow")
-}

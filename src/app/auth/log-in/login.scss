@@ -118,5 +118,5 @@
 // COMPONENT style
 
 .yellow-standard-btn {
-    @include package-button-standard($size: "small", $yellowOrPurple:"yellow")
+    @include package-button-standard($size: "small", $yellowOrwhite:"yellow")
 }

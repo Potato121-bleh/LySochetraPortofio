@@ -1,0 +1,309 @@
+@import "./../components/style/package/button";
+
+body {
+    max-width: 100vw;
+    overflow-x: hidden;
+    background-color: #F9F5F2;
+    margin:0;
+    font-family: sans-serif;
+    color: #013654;
+}
+  
+  ul {
+    list-style: none;
+  }
+
+  .yellow-btn-standard {
+    @include package-button-standard($yellowOrwhite: "yellow");
+  }
+
+  .yellow-btn-standard-small {
+    @include package-button-standard($yellowOrwhite: "yellow", $size: "small");
+  }
+
+  .yellow-btn-standard-extrasmall {
+    @include package-button-standard($yellowOrwhite: "yellow", $size: "extraSmall");
+  }
+
+  .white-btn-standard {
+    @include package-button-standard($yellowOrwhite: "white");
+  }
+
+  .white-btn-standard-small {
+    @include package-button-standard($yellowOrwhite: "white", $size: "small");
+  }
+
+  .white-btn-standard-extrasmall {
+    @include package-button-standard($yellowOrwhite: "white", $size: "extraSmall");
+  }
+
+// Media query section
+
+
+@media (max-width: 700px) {
+    .yellow-btn-standard {
+        font-size: 11px;
+      }
+    
+      .yellow-btn-standard-small {
+        font-size: 8px;
+      }
+    
+      .yellow-btn-standard-extrasmall {
+        font-size: 7px;
+      }
+    
+      .white-btn-standard {
+        font-size: 11px;
+      }
+    
+      .white-btn-standard-small {
+        font-size: 8px;
+      }
+    
+      .white-btn-standard-extrasmall {
+        font-size: 7px;
+      }
+}
+
+@media (max-width: 500px) {
+  .yellow-btn-standard {
+    font-size: 8px;
+    font-size: 8px;
+    padding: 8px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .yellow-btn-standard-small {
+    font-size: 8px;
+  }
+
+  .yellow-btn-standard-extrasmall {
+    font-size: 7px;
+  }
+
+  .white-btn-standard {
+    font-size: 8px;
+    padding: 8px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .white-btn-standard-small {
+    font-size: 8px;
+  }
+
+  .white-btn-standard-extrasmall {
+    font-size: 7px;
+  }
+}
+
+@media (max-width: 450px) {
+  .yellow-btn-standard {
+    font-size: 7px;
+    padding: 7px;
+    padding-left: 11px;
+    padding-right: 11px;
+  }
+  .white-btn-standard {
+    font-size: 7px;
+    padding: 7px;
+    padding-left: 11px;
+    padding-right: 11px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Loading State UI */
+
+.loading-main-con {
+  width: 100%;
+  height: 95vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+  .loading-sub-con {
+    position: relative;
+    width: 100px;
+    // margin: auto;
+    // margin-top: 10%;
+    
+    border-radius: 50%;
+    height: 100px;
+    transition: all 300ms ease-in-out;
+}
+
+.loading-main-component {
+    position: absolute;
+    top: 21px;
+    left: 37px;
+    list-style: none;
+    padding: 0;
+    border: solid 4px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: solid black;
+}
+
+.loading-main-handler {
+    border: solid blue;
+    position: absolute;
+    border: solid ;
+    width: 12px;
+    height: 1px;
+    bottom: 0;
+    transform: translate(15px, 6px) rotate(225deg);
+    border-radius: 10px 0px 0px 10px;
+}
+
+.loading-side-handler-con {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+    width: 104px;
+    right: -42px;
+    top: 5px;
+    visibility: hidden;
+}
+
+.loading-side-handler-element {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    width: 40px;
+}
+
+.loading-side-handler-block {
+    background: black;
+    width: 13px;
+    height: 11px;
+}
+
+.loading-side-handler-bar {
+    width: 90%;
+    height: 2px;
+    background: black;
+}
+
+.loading-side-handler-right-element {
+    width: 40px;
+    transform: scale(-1);
+}
+.loading-side-handler-right-bar {
+    height: 2px;
+    
+}
+
+.loading-color-con {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 18px;
+    right: 0px;
+    top: 40px;
+    width: 100px;
+    z-index: -1;
+    visibility: hidden;
+}
+
+.loading-color-one {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+}
+
+#color-bar-one {
+    transform: rotate(25deg);
+}
+#color-bar-two {
+    transform: rotate(70deg);
+}
+#color-bar-three {
+    transform: rotate(115deg);
+}
+#color-bar-four {
+    transform: rotate(160deg);
+}
+
+.loading-searchbox {
+    position: absolute;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    right: 55px;
+    left: 16px;
+    top: 28px;
+    height: auto;
+    list-style: none;
+    width: 65px;
+    visibility: hidden;
+}
+
+.loading-searchbox-block {
+    background-color: black;
+    width: 6px;
+    height: 6px;
+}
+
+.disable {
+    visibility: hidden;
+}
+
+.able {
+    visibility: visible;
+}
+
+/* ANIMATION */
+
+.loading-moveMainLeftRight {
+    animation: runBetweenSearchIcon 2s ease-in-out;
+}
+
+.loading-rotateMainBar {
+    animation: rotateBar 4s ease-in-out;
+}
+
+.loading-shinkIn-animation {
+    animation: shinkIn 1s ease-in;
+}
+
+@keyframes shinkIn {
+    20%{transform: scale(0);}
+    40%{transform: scale(0.2);}
+    60%{transform: scale(0.5);}
+    80%{transform: scale(0.7);}
+    100%{transform: scale(1);}
+}
+
+
+@keyframes runBetweenSearchIcon {
+    30%{transform: translate(-32px, -1px) scale(0.8)};
+    60%{transform: translate(32px, -1px) scale(0.8);};
+    100%{transform: translate(0px, 0px) scale(1);}
+}
+
+@keyframes rotateBar {
+    20%{transform: rotate(25deg)}
+    40%{transform: rotate(70deg)}
+    60%{transform: rotate(115deg)}
+    80%{transform: rotate(160deg)}
+    100%{transform: rotate(180deg)}
+}

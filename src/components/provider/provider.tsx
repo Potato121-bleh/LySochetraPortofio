@@ -12,8 +12,14 @@ import {
 } from '../method/utils'
 import { QueryClient, useMutation, useQuery } from '@tanstack/react-query'
 import { useSearchParams } from 'next/navigation'
+import {
+    handleBodyThemeProvider,
+    handleThemeAdapter,
+} from '../method/utilsStyle'
+import { colorPaletteList, darkmodeTheme } from '../style/theme/data'
+import Loading from '@/app/loading'
 
-let temporaryUserDataTest: fetchedInfo = {
+let userDataPrepTem: fetchedInfo = {
     userid: 0,
     username: '',
     usernickname: '',
@@ -25,7 +31,7 @@ let temporaryUserDataTest: fetchedInfo = {
     language: 0,
 }
 
-let temporaryUserData: fetchedInfo = {
+let userDataTem: fetchedInfo = {
     userid: 0,
     username: '',
     usernickname: '',
@@ -37,10 +43,10 @@ let temporaryUserData: fetchedInfo = {
     language: 0,
 }
 
-export const DataContext = createContext(temporaryUserData)
+export const DataContext = createContext(userDataTem)
 
 export default function Provider({ children }: { children: React.ReactNode }) {
-    let [userdata, setUserdata] = useState<fetchedInfo>(temporaryUserDataTest)
+    let [userdata, setUserdata] = useState<fetchedInfo>(userDataPrepTem)
     const queryClient = new QueryClient()
     let searchParams = useSearchParams()
     let usernameUrlParam = searchParams.get('username') ?? ''
@@ -49,6 +55,7 @@ export default function Provider({ children }: { children: React.ReactNode }) {
         {
             queryKey: ['username', usernameUrlParam],
             queryFn: verifyToken,
+            retry: 1,
         },
         queryClient
     )
@@ -58,15 +65,29 @@ export default function Provider({ children }: { children: React.ReactNode }) {
             mutationFn: getSetting,
             onSuccess: (data) => {
                 if (data) {
-                    temporaryUserData.darkmode = data.darkmode
-                    temporaryUserData.sound = data.sound
-                    temporaryUserData.colorpalettes = data.colorpalettes
-                    temporaryUserData.font = data.font
-                    temporaryUserData.language = data.language
+                    userDataTem.darkmode = data.darkmode
+                    userDataTem.sound = data.sound
+                    userDataTem.colorpalettes = data.colorpalettes
+                    userDataTem.font = data.font
+                    userDataTem.language = data.language
+                    console.log('before set useState: ' + userDataTem)
+                    setUserdata(userDataTem)
+
+                    if (userDataTem.darkmode) {
+                        console.log('it should triggered darkmode')
+                        handleBodyThemeProvider(darkmodeTheme)
+                    } else if (userDataTem.colorpalettes != 0) {
+                        handleThemeAdapter(
+                            userDataTem.colorpalettes,
+                            'bodyTheme'
+                        )
+                    }
                 }
                 console.log(data?.language)
             },
-
+            onMutate: () => {
+                return <Loading />
+            },
             onError: (err) => {
                 alert('Warning: ' + err)
             },
@@ -76,16 +97,19 @@ export default function Provider({ children }: { children: React.ReactNode }) {
 
     useEffect(() => {
         if (queryUserData.isSuccess) {
+            userDataTem.userid = queryUserData.data.userId
+            userDataTem.username = queryUserData.data.userName
+            userDataTem.usernickname = queryUserData.data.nickname
+            userDataTem.settingid = queryUserData.data.settingId
             querySettingMutation.mutateAsync(
                 Number(queryUserData.data.settingId)
             )
-            temporaryUserData.userid = queryUserData.data.userId
-            temporaryUserData.username = queryUserData.data.userName
-            temporaryUserData.usernickname = queryUserData.data.nickname
-            temporaryUserData.settingid = queryUserData.data.settingId
-            setUserdata(temporaryUserData)
         }
     }, [queryUserData.isSuccess])
+
+    if (queryUserData.isLoading) {
+        return <Loading />
+    }
 
     return (
         <DataContext.Provider value={userdata}>

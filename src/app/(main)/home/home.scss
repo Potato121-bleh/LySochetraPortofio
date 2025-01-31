@@ -1,4 +1,4 @@
-@import "./../../components/style/package/button";
+@import "./../../../components/style/package/button";
 
 
 .section-top-home-con {
@@ -39,24 +39,15 @@
     border: solid rebeccapurple;
     background: lavender;
     border-radius: 0px 70px;
-}
-
-.right-img {
     width: 300px;
     height: 300px;
 }
 
-.yellow-btn-standard {
-    @include package-button-standard($yellowOrPurple: "yellow")
+.right-img {
+    width: 100%;
+    height: 100%;
 }
 
-.purple-btn-standard {
-    @include package-button-standard($yellowOrPurple: "purple")
-}
-
-.purple-small-btn-standard {
-    @include package-button-standard($yellowOrPurple: "purple", $size: "small")
-}
 
 //---------- Webinfo-carousel section ---------
 
@@ -117,7 +108,6 @@
     width: 200px;
     padding: 30px;
     border-radius: 10px;
-    background-color: white;
     box-shadow: 5px 8px 8px #535353;
 }
 
@@ -257,20 +247,6 @@
     background-color: #5ac21f;;
     transform: translateX(20px);
 }
-
-
-/* Add on by style package */
-.setting-fixed-purple-btn-standard {
-  @include package-button-standard($yellowOrPurple: "purple", $size: "small");
-  font-size: 10px;
-  box-shadow: none;
-  border: solid 1px;
-  background-color: white;
-}
-
-
-
-
 
 
 

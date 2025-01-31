@@ -69,7 +69,7 @@ export default function LoginPage() {
                 let usernameInput = document.getElementById(
                     'username-input-id'
                 ) as HTMLInputElement
-                window.location.href = '/home?username=' + usernameInput.value
+                window.location.href = '/'
             },
         },
         queryClient

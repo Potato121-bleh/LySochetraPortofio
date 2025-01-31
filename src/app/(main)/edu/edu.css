@@ -1,0 +1,52 @@
+/* Main container for the education content */
+.edu-content-main-con {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Sub-container for sections */
+.edu-content-sub-con {
+    display: block;
+    padding: 0;
+}
+
+/* Section header container */
+.edu-content-section-header {
+    display: flex;
+    align-items: center;
+    margin: 2%;
+    margin-left: 3%;
+    margin-right: 3%;
+    padding: 0;
+    list-style-type: none;
+}
+
+/* Title for skill sections (e.g., Frontend Skills, Backend Skills) */
+.edu-content-section-title {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+    margin-left: 30px;
+}
+
+/* Skill card section container */
+.edu-content-skill-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 0;
+    list-style-type: none;
+}
+
+/* max-width: 870px  have to resize the box */
+
+
+@media (max-width: 550px) {
+    .edu-content-section-title {
+        font-size: 20px;
+        margin-top: 20px;
+        margin-bottom: 0px;
+    }
+}

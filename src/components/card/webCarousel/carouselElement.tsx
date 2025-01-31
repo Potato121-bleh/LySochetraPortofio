@@ -41,11 +41,8 @@ function WebCarouselElement() {
                         >
                             <div className="web-carousel-attactment-text-con shake-element">
                                 <div className="web-carousel-attactment-profile-con">
-                                    <FontAwesomeIcon
-                                        size="3x"
-                                        className="web-carousel-attactment-icon"
-                                        icon={element.icon}
-                                    />
+                                    {element.icon}
+
                                     <h3>{element.title}</h3>
                                 </div>
                                 <div>
@@ -53,7 +50,7 @@ function WebCarouselElement() {
                                         {element.description}
                                     </p>
                                     <div className="web-carousel-attactment-profile-btn">
-                                        <button className="web-carousel-yellow-btn">
+                                        <button className="white-btn-standard-small btn-type-one">
                                             Discover
                                         </button>
                                     </div>

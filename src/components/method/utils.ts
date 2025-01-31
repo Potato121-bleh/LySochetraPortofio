@@ -39,6 +39,29 @@ export type MutationAndSetTempDataType = {
     setUserNickname: Dispatch<SetStateAction<string>>
 }
 
+type handleSwitchClassListType = {
+    userDataElementTem: number
+    parentElement: HTMLElement
+    childElement: Element
+}
+
+export const handleSwitchClassList = ({
+    userDataElementTem,
+    parentElement,
+    childElement,
+}: handleSwitchClassListType) => {
+    if (userDataElementTem == 0) {
+        parentElement.classList.remove('move-turn-on-switch')
+        childElement.classList.remove('move-turn-on-switch-ball')
+    } else {
+        parentElement.classList.add('move-turn-on-switch')
+        childElement.classList.add('move-turn-on-switch-ball')
+    }
+}
+
+export const handleSwitchSelect = () => {
+    
+}
 
 
 export async function getCSRFKey(baseEndpoint: string):Promise<string> {
@@ -75,7 +98,7 @@ export let temporaryUserData: fetchedInfo = {
 }
 
 export const verifyToken = async (): Promise<userInfo> => {
-    require('dotenv').config()
+    //require('dotenv').config()
     const basedApiUrl = getApiFromEnv();
     let fetchUserResp
     try {

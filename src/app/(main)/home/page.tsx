@@ -1,25 +1,16 @@
 'use client'
 import './home.css'
+
 import WebCarouselElement from '@/components/card/webCarousel/carouselElement'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Image from 'next/image'
 import { carouselData } from '@/app/data/componentData'
 import { MouseEvent, useContext, useEffect, useRef, useState } from 'react'
 import Setting from '@/components/preferences/setting/setting'
-import {
-    fetchedInfo,
-    handleMutationAndSetTempData,
-    handleQueryUser,
-    handleSettingMutation,
-} from '@/components/method/utils'
-import { QueryClient } from '@tanstack/react-query'
-import { useSearchParams } from 'next/navigation'
-import HeaderPage from '@/components/navigation/header/header'
-import { DataContext } from '@/components/provider/provider'
-//import { CustomDiv } from '../layout'
+import { fetchedInfo, temporaryUserData } from '@/components/method/utils'
 
-//[0] is for darkmode
-//[1] is for sound effect
+import { DataContext } from '@/components/provider/provider'
+import { themeWrapper } from '@/components/method/utilsStyle'
+import './responsive/homeResp.css'
 
 function Homepage() {
     console.log('children RENDERED')
@@ -29,6 +20,8 @@ function Homepage() {
     let [carouselSwitchBtnText, setCarouselSwitchBtnText] =
         useState<string>('Try me')
     let [userNickname, setUserNickname] = useState<string>('Guest')
+    let [contextUserData, setContextUserData] =
+        useState<fetchedInfo>(temporaryUserData)
     let contextConsumer = useContext(DataContext)
     console.log(contextConsumer)
 
@@ -36,9 +29,14 @@ function Homepage() {
         console.log(contextConsumer.usernickname)
         if (contextConsumer.usernickname) {
             setUserNickname(contextConsumer.usernickname)
+            setContextUserData(contextConsumer)
             console.log(contextConsumer)
+
+            themeWrapper(
+                contextConsumer,
+                '.webinfo-card-element-con, .setting-content-one-element-form'
+            )
         }
-        console.log(contextConsumer.usernickname)
     })
 
     const handleSwitchCarouselContent = () => {
@@ -75,12 +73,12 @@ function Homepage() {
                         </h5>
                         <ul className="top-home-left-btn-con">
                             <li>
-                                <button className="yellow-btn-standard">
+                                <button className="yellow-btn-standard btn-type-one">
                                     Explore
                                 </button>
                             </li>
                             <li>
-                                <button className="purple-btn-standard">
+                                <button className="white-btn-standard btn-type-two">
                                     Contact
                                 </button>
                             </li>
@@ -125,17 +123,13 @@ function Homepage() {
                                     className="webinfo-card-element-con"
                                 >
                                     <li className="webinfo-card-intro-con">
-                                        <FontAwesomeIcon
-                                            size="3x"
-                                            className="web-carousel-attactment-icon"
-                                            icon={element.icon}
-                                        />
+                                        {element.icon}
                                         <h1>{element.title}</h1>
                                     </li>
                                     <li className="webinfo-card-description">
                                         <p>{element.description}</p>
                                         <div className="webinfo-card-btn-con">
-                                            <button className="web-carousel-yellow-btn">
+                                            <button className="white-btn-standard-small btn-type-one ">
                                                 Discover
                                             </button>
                                         </div>
@@ -152,8 +146,9 @@ function Homepage() {
                     </li>
                     <li>
                         <button
+                            // style={{ fontSize: '10px' }}
                             onClick={handleSwitchCarouselContent}
-                            className="purple-small-btn-standard"
+                            className="white-btn-standard-small btn-type-two "
                         >
                             {carouselSwitchBtnText}
                         </button>
@@ -164,7 +159,7 @@ function Homepage() {
             <section className="setting-main-con">
                 <h1 className="setting-title">Settings</h1>
                 <div className="setting-content-one">
-                    <Setting />
+                    <Setting userDataTem={contextUserData} />
                 </div>
             </section>
         </main>

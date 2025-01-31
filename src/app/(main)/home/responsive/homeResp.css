@@ -1,0 +1,136 @@
+@media (max-width: 1000px) {
+  .top-home-left-text-con h1 {
+    font-size: 35px;
+  }
+  .webinfo-card-content-two {
+    margin: 3%;
+  }
+  .webinfo-card-element-con {
+    width: 150px;
+    height: 210px;
+    padding: 20px;
+  }
+  .webinfo-card-intro-con h1 {
+    font-size: 17px;
+  }
+  .webinfo-card-description {
+    height: 120px;
+  }
+  .webinfo-card-description p {
+    font-size: 10px;
+  }
+  .webinfo-carousel-header {
+    font-size: 35px;
+  }
+  .webinfo-carousel-btn-con {
+    display: none;
+  }
+  .web-carousel-attactment-icon {
+    width: 30px !important;
+    height: 30px !important;
+  }
+  .right-img-frame {
+    width: 240px;
+    height: 240px;
+  }
+}
+@media (max-width: 700px) {
+  .top-home-left-text-con h5 {
+    font-size: 10px;
+  }
+  .top-home-left-text-con h1 {
+    font-size: 30px;
+  }
+  .right-img-frame {
+    width: 180px;
+    height: 180px;
+  }
+  .section-top-home-con {
+    height: 60vh;
+  }
+  .webinfo-card-intro-con h1 {
+    font-size: 14px;
+  }
+  .web-carousel-attactment-icon {
+    width: 25px !important;
+    height: 25px !important;
+  }
+  .webinfo-carousel-header {
+    font-size: 25px;
+  }
+  .webinfo-card-element-con {
+    padding: 10px;
+    width: 120px;
+    height: 180px;
+  }
+  .webinfo-card-description {
+    height: 100px;
+  }
+  .webinfo-card-description p {
+    font-size: 8px;
+  }
+  .right-img-frame {
+    width: 180px;
+    height: 180px;
+  }
+}
+@media (max-width: 580px) {
+  .section-top-home-con {
+    height: 50vh;
+  }
+  .top-home-left-text-con h5 {
+    font-size: 8px;
+  }
+  .top-home-left-text-con h1 {
+    font-size: 20px;
+  }
+  .right-img-frame {
+    width: 130px;
+    height: 130px;
+  }
+}
+@media (max-width: 500px) {
+  .section-top-home-con {
+    height: 40vh;
+  }
+  .top-home-left-btn-con li {
+    margin-top: 0;
+    margin-right: 15px;
+  }
+  .top-home-left-text-con h5 {
+    font-size: 8px;
+  }
+  .top-home-left-text-con h1 {
+    font-size: 16px;
+  }
+  .right-img-frame {
+    width: 130px;
+    height: 130px;
+    overflow: hidden;
+  }
+  .webinfo-carousel-con {
+    height: auto;
+  }
+  .webinfo-carousel-header {
+    font-size: 20px;
+  }
+  .webinfo-card-content-two {
+    display: flex;
+    justify-content: center;
+  }
+  .webinfo-card-main-con {
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+  }
+  .webinfo-card-element-con {
+    width: 50%;
+    margin: 15px;
+  }
+}
+@media (max-width: 400px) {
+  .right-img-frame {
+    width: 100px;
+    height: 100px;
+  }
+}

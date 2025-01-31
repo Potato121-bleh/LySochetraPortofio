@@ -145,7 +145,7 @@ export default function SigninPage() {
                         </li>
                     </ul>
                     <li className="signup-form-submit-con">
-                        <button className="signup-form-submit yellow-standard-btn">
+                        <button className="signup-form-submit yellow-btn-standard btn-type-one">
                             Submit
                         </button>
                     </li>

@@ -1,0 +1,103 @@
+.edu-card-main-con {
+  display: flex;
+  border-radius: 15px;
+  width: 150px;
+  height: 200px;
+  margin: 20px;
+  padding: 10px 0;
+  border: none;
+  box-shadow: 4px 3px 5px rgba(0, 0, 0, 0.1607843137);
+  overflow: hidden;
+  list-style-type: none;
+  transition: all 300ms ease-in-out;
+}
+
+/* Section for the logo and showcase content */
+.edu-card-logo-showcase-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 150px;
+  list-style: none;
+  padding: 0;
+}
+
+/* Image section inside the logo showcase */
+.edu-card-img-section {
+  list-style: none;
+  padding: 0;
+  width: 75px;
+  height: 75px;
+}
+
+.edu-card-img {
+  width: 100%;
+  height: 100%;
+}
+
+/* Divider for logo showcase */
+.edu-card-logo-showcase-divider {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  border: solid 1px #ddcdcd;
+  width: 80%;
+  list-style: none;
+  padding: 0;
+}
+
+/* Title under the logo */
+.edu-card-title {
+  margin-top: 5px;
+  font-size: 14px; /* Adjust if needed */
+  font-weight: bold;
+  text-align: center;
+  color: inherit;
+}
+
+/* Learn more button */
+.edu-card-learnmore-btn {
+  padding: 8px;
+  margin-top: 5px;
+  border: solid 1px currentColor;
+  font-size: 12px;
+  background: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  border-radius: 5px;
+}
+
+.edu-card-learnmore-btn:hover {
+  background-color: #f0f0f0;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Vertical divider between sections */
+.edu-card-divider {
+  height: 80%;
+  margin: 10px 0;
+  border: solid 1px #ddcdcd;
+}
+
+/* Section for description */
+.edu-card-description-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  min-width: 200px;
+  text-align: center;
+}
+
+/* Description text */
+.edu-card-description-text {
+  margin: 16px;
+  font-size: 11px;
+  color: inherit;
+}
+
+/* width: 150px */
+.edu-open-description {
+  width: 380px;
+}

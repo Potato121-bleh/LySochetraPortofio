@@ -1,0 +1,127 @@
+.contact-main-con {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-sub-con {
+  width: 90%;
+  padding: 0;
+  list-style: none;
+}
+
+.contact-title {
+  margin: 25px;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.contact-content-section {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 25px;
+  padding: 15px;
+}
+
+.contact-card-con {
+  width: 375px;
+  padding: 15px;
+  border: solid rebeccapurple;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.contact-card-icon-con {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 85px;
+  height: 85px;
+}
+
+.contact-card-icon {
+  width: 50px !important;
+  height: 50px !important;
+}
+
+.contact-card-description-con {
+  width: 70%;
+}
+
+.contact-card-title {
+  font-size: 13px;
+  font-weight: bold;
+  padding-left: 10px;
+}
+
+.contact-card-description {
+  padding-left: 10px;
+  font-size: 11px;
+}
+
+.contact-quickaccess-main-con {
+  display: flex;
+  justify-content: space-between;
+  width: 155px;
+  padding: 0;
+  margin-top: 30px;
+}
+
+.contact-quickaccess-child-con {
+  overflow: hidden;
+  border-radius: 15%;
+  width: 35px;
+  height: 35px;
+}
+
+.contact-quickaccess-img {
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+}
+
+@media (max-width: 950px) {
+  .contact-sub-con {
+    width: 90%;
+  }
+  .contact-card-con {
+    width: 230px;
+    height: 70px;
+  }
+  .contact-card-icon-con {
+    width: 60px;
+    height: auto;
+  }
+  .contact-card-icon {
+    width: 40px !important;
+    height: 40px !important;
+  }
+  .contact-card-description-con {
+    width: 100%;
+  }
+  .contact-card-title {
+    font-size: 11px;
+  }
+  .contact-card-description {
+    font-size: 8px;
+  }
+}
+@media (max-width: 630px) {
+  .contact-title {
+    font-size: 21px;
+    margin-bottom: 0px;
+  }
+  .contact-content-section {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0px;
+  }
+  .contact-card-con {
+    margin: 20px;
+  }
+  .contact-quickaccess-main-con {
+    margin: 0;
+  }
+}
