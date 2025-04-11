@@ -1,15 +1,21 @@
 'use client'
 import Image from 'next/image'
-import { contactCardArrType } from './page'
 import { ContactMail, PermPhoneMsg } from '@mui/icons-material'
 import { useContext, useEffect } from 'react'
 import { DataContext } from '@/components/provider/provider'
 import { themeWrapper } from '@/components/method/utilsStyle'
+import './contact.css'
 
-export const ContactPage = () => {
+type contactCardArrType = {
+    id: number
+    title: string
+    description: string
+    icon: JSX.Element
+}
+
+const ContactPage = () => {
     const themeContext = useContext(DataContext)
 
-    // card className: contact-card-con
     useEffect(() => {
         if (!themeContext) return
         themeWrapper(themeContext, '.contact-card-con')
@@ -100,3 +106,5 @@ export const ContactPage = () => {
         </main>
     )
 }
+
+export default ContactPage

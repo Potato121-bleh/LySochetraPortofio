@@ -119,6 +119,7 @@ export default function LoginPage() {
                                 width={50}
                                 height={50}
                                 src="/loginNsignin/monkey-head-clean.png"
+                                priority={true}
                                 alt="money-head"
                             />
                             <div
@@ -182,7 +183,7 @@ export default function LoginPage() {
                         <p>No Account Yet?</p>
                         <Link
                             className="login-form-submit-signup-url"
-                            href="/auth/sign-up"
+                            href="/auth/signup"
                         >
                             Sign Up
                         </Link>

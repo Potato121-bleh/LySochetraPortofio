@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
 import './visualEleCard.css'
-import { visualCardArrType } from '@/app/(main)/component/data'
+import { visualCardArrType } from '@/app/(main)/component/componentPage/data'
 
 type visualEleCardType = {
     data: visualCardArrType

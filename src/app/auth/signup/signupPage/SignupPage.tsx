@@ -5,11 +5,17 @@ import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import {
+    QueryClient,
+    QueryClientProvider,
+    useMutation,
+} from '@tanstack/react-query'
+import axios from 'axios'
+import Loading from '@/app/loading'
 
 let cartoonTrigger: boolean = false
 
-export default function SigninPage() {
+export default function SignupPage() {
     const usernameInputRef = useRef<HTMLInputElement>(null)
     const nicknameInputRef = useRef<HTMLInputElement>(null)
     const passwordInputRef = useRef<HTMLInputElement>(null)
@@ -17,6 +23,57 @@ export default function SigninPage() {
     let [passwordType, setPasswordType] = useState('password')
     let [guyMessage, setGuyMessage] = useState('')
     const queryClient = new QueryClient()
+
+    const handleSignupReq = async (): Promise<any> => {
+        if (
+            usernameInputRef.current?.value &&
+            nicknameInputRef.current?.value &&
+            passwordInputRef.current?.value
+        ) {
+            try {
+                require('dotenv').config()
+                let apiUrl = process.env.NEXT_PUBLIC_API_URL + 'user/signup'
+                console.log(apiUrl)
+                let resp = await axios.post(
+                    apiUrl,
+                    {
+                        username: usernameInputRef.current.value,
+                        password: passwordInputRef.current.value,
+                        nickname: nicknameInputRef.current.value,
+                    },
+                    {
+                        headers: { 'Content-type': 'application/json' },
+                    }
+                )
+                if (resp.status != 200) {
+                    throw new Error('failed to sign up')
+                }
+                console.log(resp)
+                console.log(resp.data)
+                console.log(resp.status)
+                return resp.data
+            } catch (e) {
+                console.log(e)
+                return
+            }
+        }
+    }
+
+    const signUpMutate = useMutation(
+        {
+            mutationFn: handleSignupReq,
+            onMutate() {
+                return <Loading />
+            },
+            onSuccess() {
+                //window.location.href = '/auth/log-in'
+            },
+            onError() {
+                window.alert('Failed to Sign up, Please try again later')
+            },
+        },
+        queryClient
+    )
 
     const handleRemoveRollEye = (
         element: HTMLElement | null,
@@ -82,6 +139,11 @@ export default function SigninPage() {
             setPasswordType('text')
         }
     }
+
+    const handleSignup = () => {
+        signUpMutate.mutateAsync()
+    }
+
     return (
         <QueryClientProvider client={queryClient}>
             <main className="signup-main-con">
@@ -145,7 +207,10 @@ export default function SigninPage() {
                         </li>
                     </ul>
                     <li className="signup-form-submit-con">
-                        <button className="signup-form-submit yellow-btn-standard btn-type-one">
+                        <button
+                            className="signup-form-submit yellow-btn-standard btn-type-one"
+                            onClick={handleSignup}
+                        >
                             Submit
                         </button>
                     </li>

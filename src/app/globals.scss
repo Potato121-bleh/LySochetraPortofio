@@ -128,11 +128,14 @@ body {
 /* Loading State UI */
 
 .loading-main-con {
+  position: fixed;
   width: 100%;
-  height: 95vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  top: 0;
+  height: 100vh;
+  background: #80808047;
 }
 
   .loading-sub-con {

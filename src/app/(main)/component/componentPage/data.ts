@@ -63,13 +63,13 @@ export const componentGalleryArr: componentGalleryArrType[] = [
         id: 1,
         title: 'Graph',
         list: [
-            {
-                id: 1,
-                imgUrl: '/component/pageGif/graphDemo.png',
-                pathUrl: './component/graph/graph1',
-                title: 'graph1',
-                categoryName: 'graph',
-            },
+            // {
+            //     id: 1,
+            //     imgUrl: '/component/pageGif/graphDemo.png',
+            //     pathUrl: './component/graph/graph1',
+            //     title: 'graph1',
+            //     categoryName: 'graph',
+            // },
         ],
     },
     {
@@ -82,13 +82,13 @@ export const componentGalleryArr: componentGalleryArrType[] = [
         id: 3,
         title: 'Component',
         list: [
-            {
-                id: 1,
-                imgUrl: '/component/pageGif/graphDemo.png',
-                pathUrl: './component/components/component1',
-                title: 'component1',
-                categoryName: 'Component',
-            },
+            // {
+            //     id: 1,
+            //     imgUrl: '/component/pageGif/graphDemo.png',
+            //     pathUrl: './component/components/component1',
+            //     title: 'component1',
+            //     categoryName: 'Component',
+            // },
         ],
     },
 ]

@@ -1,5 +1,5 @@
 'use client'
-import { EduSkill } from '@/app/(main)/edu/data'
+import { EduSkill } from '@/app/(main)/edu/edupage/data'
 import { useRef } from 'react'
 import './eduCard.css'
 

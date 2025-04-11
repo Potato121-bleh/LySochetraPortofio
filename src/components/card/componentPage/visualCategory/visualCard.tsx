@@ -1,5 +1,5 @@
 'use client'
-import { categoryCardArrType } from '@/app/(main)/component/data'
+import { categoryCardArrType } from '@/app/(main)/component/componentPage/data'
 import './visualCard.css'
 
 type categoryDataType = {

@@ -10,6 +10,7 @@ type carouselDataType = {
     id: number
     icon: JSX.Element
     title: string
+    pathUrl: string
     description: string
 }
 
@@ -18,6 +19,7 @@ export let carouselData: carouselDataType[] = [
         id: 1,
         icon: <Construction className="web-carousel-attactment-icon" />,
         title: 'Customization',
+        pathUrl: '/',
         description:
             'Does the UI feel plain? Good news! You can fully customize it to match your preferences.',
     },
@@ -25,6 +27,7 @@ export let carouselData: carouselDataType[] = [
         id: 2,
         icon: <GridView className="web-carousel-attactment-icon" />,
         title: 'Component',
+        pathUrl: '/component/components',
         description:
             "This portfolio not only showcases my skills and expertise but also lets you explore the custom components I've built.",
     },
@@ -32,6 +35,7 @@ export let carouselData: carouselDataType[] = [
         id: 3,
         icon: <School className="web-carousel-attactment-icon" />,
         title: 'Education',
+        pathUrl: '/edu',
         description:
             'Exploring a portfolio without learning about the creator’s background feels incomplete. Take a look at my education and credentials!',
     },

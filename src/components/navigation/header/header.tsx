@@ -1,6 +1,5 @@
 'use client'
 import Link from 'next/link'
-import './header.css'
 import { redirect, useSearchParams } from 'next/navigation'
 import { useContext, useEffect, useState } from 'react'
 import { fetchedInfo, getSetting, verifyToken } from '@/components/method/utils'
@@ -68,14 +67,11 @@ function HeaderPage() {
         let dialogUsername = document.getElementById(
             'header-dialog-title-username-id'
         )
-        let dialogMenuEle = document.querySelectorAll('.header-page-element')
+        // let dialogMenuEle = document.querySelectorAll('.header-page-element')
         if (headerTxt && dialogUsername && contextConsumer.usernickname) {
             headerTxt.innerText = contextConsumer.usernickname
             dialogUsername.innerText = contextConsumer.usernickname
             themeWrapper(contextConsumer, '.header-page-element')
-            // dialogMenuEle.forEach((element) => {
-            //     (element as HTMLElement).style.background = contextConsumer.
-            // })
         }
     })
 
@@ -103,7 +99,7 @@ function HeaderPage() {
 
     const handleNavigate = (ref: string) => {
         if (ref == 'login') {
-            window.location.href = '/auth/log-in'
+            window.location.href = '/auth/login'
         } else {
             window.location.href = '/auth/signout'
         }

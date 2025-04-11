@@ -1,15 +1,8 @@
 'use client'
 
 import { createContext, useEffect, useState } from 'react'
-import HeaderPage from '../navigation/header/header'
-import {
-    fetchedInfo,
-    getSetting,
-    handleMutationAndSetTempData,
-    handleQueryUser,
-    handleSettingMutation,
-    verifyToken,
-} from '../method/utils'
+// import HeaderPage from '../navigation/header/header'
+import { fetchedInfo, getSetting, verifyToken } from '../method/utils'
 import { QueryClient, useMutation, useQuery } from '@tanstack/react-query'
 import { useSearchParams } from 'next/navigation'
 import {
@@ -18,6 +11,7 @@ import {
 } from '../method/utilsStyle'
 import { colorPaletteList, darkmodeTheme } from '../style/theme/data'
 import Loading from '@/app/loading'
+import dynamic from 'next/dynamic'
 
 let userDataPrepTem: fetchedInfo = {
     userid: 0,
@@ -42,6 +36,10 @@ let userDataTem: fetchedInfo = {
     font: 0,
     language: 0,
 }
+
+const HeaderPage = dynamic(() => import('../navigation/header/Header'), {
+    ssr: false,
+})
 
 export const DataContext = createContext(userDataTem)
 

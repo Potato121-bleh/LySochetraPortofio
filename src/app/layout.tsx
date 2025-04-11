@@ -1,11 +1,13 @@
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import './globals.css'
-import Header from '@/components/navigation/header/header'
+import '@/components/navigation/header/header.css'
+import Header from '@/components/navigation/header/Header'
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query'
-import HeaderPage from '@/components/navigation/header/header'
-import React, { Children, FC } from 'react'
+import HeaderPage from '@/components/navigation/header/Header'
+import React, { Children, FC, Suspense } from 'react'
 import Provider from '@/components/provider/provider'
+import { Loading } from '@/components/preferences/loading/LoadingUi'
 
 const geistSans = localFont({
     src: './fonts/GeistVF.woff',
@@ -29,7 +31,9 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={`${geistSans.variable} ${geistMono.variable}`}>
-                <Provider>{children}</Provider>
+                <Suspense fallback={<Loading />}>
+                    <Provider>{children}</Provider>
+                </Suspense>
             </body>
         </html>
     )
